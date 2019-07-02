@@ -3,8 +3,8 @@ namespace MyClass;
 class User extends \MyClass\Common{
     //意向客户
 	public function Index(){
-		$p = e('Page',$this->m('e_user')->where('cates_id = 1')->count(),50);
-		$list = $this->m('e_user')->where('cates_id = 1')->limit($p->firstRow.','.$p->listRows)->select();
+		$p = e('Page',$this->m('e_user')->count(),50);
+		$list = $this->m('e_user')->limit($p->firstRow.','.$p->listRows)->select();
 		$this->s('list',$list)->s('page',$p->show())->v();
 	}
 
@@ -14,9 +14,32 @@ class User extends \MyClass\Common{
     }
 
     public function  add(){
-	    $this->v();
+	     $this->v();
     }
 
+    public function Edit_do(){
+	    $id = $_POST['id'];
+        $data['user_id']=$_POST['user_id'];
+        $data['names']=$_POST['names'];
+        $data['cates_id']=$_POST['cates_id'];
+      if(!empty($id)){
+         $res =  $this->m('e_user')->where('id = '.$id)->save($data);
+          if($res){
+              $this->ajax('200','编辑成功！');
+          }else{
+              $this->ajax('400','编辑失败！');
+          }
+      }else{
+          $data['create_time']=time();
+          $res =   $this->m('e_user')->add($data);
+          if($res){
+              $this->ajax('200','添加成功！');
+          }else{
+              $this->ajax('400','添加失败！');
+          }
+      }
+
+    }
 
 
     //todo 没有使用
