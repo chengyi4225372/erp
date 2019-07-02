@@ -1,0 +1,204 @@
+<include file="Public/top" />
+<include file='Public/left' />
+	<!-- BEGIN PAGE -->
+<div class="page-content">
+
+	<!-- BEGIN PAGE CONTAINER-->        
+
+	<div class="container-fluid">
+
+		<!-- BEGIN PAGE HEADER-->
+
+		<div class="row-fluid">
+
+			<div class="span12">
+
+
+				<!-- BEGIN PAGE TITLE & BREADCRUMB-->
+
+				<h3 class="page-title">
+
+						{:F('title')}  <small>后台管理</small>
+
+				</h3>
+
+				<ul class="breadcrumb">
+
+					<li>
+
+						<i class="icon-home"></i>
+
+						<a href="{:T('Index/Index')}">首页</a> 
+
+						<i class="icon-angle-right"></i>
+
+					</li>
+
+
+					<li><a href="">编辑</a></li>
+
+				</ul>
+
+				<!-- END PAGE TITLE & BREADCRUMB-->
+
+			</div>
+
+		</div>
+
+		<!-- END PAGE HEADER-->
+				
+				
+		<!-- BEGIN PAGE CONTENT-->
+
+		<div class="row-fluid">
+
+			<div class="span12">
+
+				<!-- BEGIN EXAMPLE TABLE PORTLET-->
+
+				<div class="portlet box grey">
+
+					<div class="portlet-title">
+
+						<div class="caption"><i class="icon-edit"></i>费用规则列表</div>
+
+						<div class="tools">
+
+							<a href="javascript:;"></a>
+
+							<a href="javascript:;" class="reload"></a>
+
+							<a href="javascript:;" class="remove"></a>
+
+						</div>
+
+					</div>
+					<div class="portlet-body">
+						<div class="clearfix">
+
+								<div class="btn-group">
+
+									<a id="sample_editable_1_new" class="btn green" href="{:T('Order/SetAdd')}">
+
+									增加税率税费规则 <i class="icon-plus"></i>
+
+									</a>
+
+								</div>
+							</div>
+						  <fieldset>
+							<table class="table sliders table-striped">
+									<thead>
+										<tr>
+											<th>营业额</th>
+											<th>税费条件</th>
+											<th>增值税</th>
+											<th>城建税</th>
+											<th>教育附加税</th>
+											<th>地方教育附加</th>
+											<th>个人经营所得税</th>
+										</tr>
+									</thead>
+									<tbody>
+										
+										<tr>
+
+											<td>
+												3万以下税费
+											</td>
+											<td>
+												X < 30000
+											</td>
+											<td>
+												0%
+											</td>
+											<td>
+												0%
+											</td>
+											<td>
+												0%
+											</td>
+											<td>
+												0%
+											</td>
+											<td>
+												0%
+											</td>
+
+										</tr>
+										<tr>
+										<td>
+												3-10万税费
+											</td>
+											<td>
+												30000 < X < 100000 
+											</td>
+											<td>
+												0%
+											</td>
+											<td>
+												0%
+											</td>
+											<td>
+												0%
+											</td>
+											<td>
+												0%
+											</td>
+											<td>
+												1.4%
+											</td>
+
+										</tr>
+										<tr>
+
+											<td>
+												10万以上税费
+											</td>
+											<td>
+												X > 100000 
+											</td>
+											<td>
+												3%
+											</td>
+											<td>
+												0.0021%
+											</td>
+											<td>
+												0.0009%
+											</td>
+											<td>
+												0.0006%
+											</td>
+											<td>
+												1.4%
+											</td>
+
+										</tr>
+
+									</tbody>
+
+								</table>
+							
+						  </fieldset>
+									
+					
+					</div>
+				</div>
+
+			</div>
+
+			<!-- END PAGE CONTENT -->
+
+		</div>
+
+		<!-- END PAGE CONTAINER-->
+
+	</div>
+
+	<!-- END PAGE -->
+
+</div>
+
+<!-- END CONTAINER -->
+<include file="Public/foot" />

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+
+<!-- BEGIN HEAD -->
+
+<head>
+	<meta charset="utf-8" />
+	<title>{:F(title)} | 后台管理系统</title>
+	<meta content="" name="description" />
+	<meta content="chinax3" name="author" />
+	<!-- BEGIN GLOBAL MANDATORY STYLES -->
+	<link href="{$_public}/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+	<link href="{$_public}/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+	<link href="{$_public}/css/style.css" rel="stylesheet" type="text/css"/>
+	<link href="{$_public}/css/style-metro.css" rel="stylesheet" type="text/css"/>
+	<link href="{$_public}/css/style-responsive.css" rel="stylesheet" type="text/css" id="style_color"/>
+	<link href="{$_public}/css/grey.css" rel="stylesheet" type="text/css" id="style_color"/>	
+	<!-- END PAGE LEVEL STYLES -->
+	<link rel="shortcut icon" href="{$_public}/image/favicon.ico" />
+	<!-- JS 框架JQUERY -->
+	<script src="{$_public}/js/jquery-1.10.1.min.js" type="text/javascript"></script>
+	<!-- JS query 向下兼容工具  -->
+	<script src="{$_public}/js/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+	<!-- UI 核心 -->
+	<script src="{$_public}/js/bootstrap.min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="{$_public}/js/layer/layer.js"></script>
+	<script src="{$_public}/js/app.js" type="text/javascript"></script>
+	<script>$(document).ready(function(){App.init() })</script>
+</head>
+
+<!-- END HEAD -->
+
+<!-- BEGIN BODY -->
+
+<body class="page-header-fixed">
+
+	<!-- BEGIN HEADER -->
+
+	<div class="header navbar navbar-inverse navbar-fixed-top">
+
+		<!-- BEGIN TOP NAVIGATION BAR -->
+
+		<div class="navbar-inner">
+
+			<div class="container-fluid">
+
+				<!-- BEGIN LOGO -->
+
+				<a class="brand" style="color:#fff;">
+					<img src="{$_public}/image/logo1_4.png" style="height:42px;">
+				</a>
+
+				<!-- END LOGO -->
+
+				<!-- BEGIN RESPONSIVE MENU TOGGLER -->
+
+				<a href="javascript:;" class="btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
+
+				<img src="{$_public}/image/menu-toggler.png" alt="" />
+
+				</a>          
+
+				<!-- END RESPONSIVE MENU TOGGLER -->            
+
+				<!-- BEGIN TOP NAVIGATION MENU -->  
+				<ul class='nav pull-right'>
+				<li class="last nav-right">
+						
+						<a>	
+<i class="icon-user"></i> 
+						<span class="title">Admin管理员</span>
+
+					</a>
+
+				</li>
+					<li class="last nav-right">
+						<a href="{:T('Index/Logout')}">	
+
+						<span class="title">退出登录</span>
+
+					</a>
+
+				</li>
+				</ul>
+
+				<!-- END TOP NAVIGATION MENU --> 
+
+			</div>
+
+		</div>
+		<!-- END TOP NAVIGATION BAR -->
+	</div>
+		<!-- END HEADER -->

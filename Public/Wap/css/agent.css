@@ -1,0 +1,5 @@
+.agent{padding:2% 5%}
+.agent .con{border-bottom:1px solid #eee;padding:2% 0}
+.agent .con .title{color:#000;font-size:14px;}
+.agent .con .title span{color:#ff8400;font-size:12px;margin-left:12px;}
+.agent .con p{color:#999;font-size:12px;}

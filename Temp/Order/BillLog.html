@@ -1,0 +1,159 @@
+<include file="Public/top" />
+<include file='Public/left' />
+		<!-- BEGIN PAGE -->
+
+		<div class="page-content">
+
+			<!-- BEGIN PAGE CONTAINER-->        
+
+			<div class="container-fluid">
+
+				<!-- BEGIN PAGE HEADER-->
+
+				<div class="row-fluid">
+
+					<div class="span12">
+
+
+						<!-- BEGIN PAGE TITLE & BREADCRUMB-->
+
+						<h3 class="page-title">
+
+								{:F('title')}  <small>后台管理</small>
+
+						</h3>
+
+						<ul class="breadcrumb">
+
+							<li>
+
+								<i class="icon-home"></i>
+
+								<a href="{:T('Index/Index')}">首页</a> 
+
+								<i class="icon-angle-right"></i>
+
+							</li>
+
+							<li>
+
+								<a href="{:T('User/Index')}">会员管理</a>
+
+								<i class="icon-angle-right"></i>
+
+							</li>
+
+							<li><a href="">会员列表</a></li>
+
+						</ul>
+
+						<!-- END PAGE TITLE & BREADCRUMB-->
+
+					</div>
+
+				</div>
+
+				<!-- END PAGE HEADER-->
+
+				<!-- BEGIN PAGE CONTENT-->
+
+				<div class="row-fluid">
+
+					<div class="span12">
+
+						<!-- BEGIN EXAMPLE TABLE PORTLET-->
+
+						<div class="portlet box grey">
+
+							<div class="portlet-title">
+
+								<div class="caption"><i class="icon-edit"></i></div>
+
+								<div class="tools">
+
+									<a href="javascript:;" class="collapse"></a>
+
+									<a href="javascript:;" class="reload"></a>
+
+									<a href="javascript:;" class="remove"></a>
+
+								</div>
+
+							</div>
+
+							<div class="portlet-body">
+
+								<div class="clearfix">
+
+
+								</div>
+
+								<table class="table table-striped table-hover table-bordered" id="sample_editable_1">
+
+									<thead>
+
+										<tr>
+
+											<th class="span1">流水号</th>
+											<th class="span3">收款方式</th>
+											<th class="span3">收款金额</th>
+											<th class="span2">操作人</th>
+										</tr>
+
+									</thead>
+									<tbody>
+									<foreach $list as $v>
+									<tr class="">
+											<td style='vertical-align:sub'>{$v['id']}</td>
+											<td style='vertical-align:sub'>{$v['uid']}</td>
+											<td style='vertical-align:sub'>{$v['apptime']}</td>
+											<td style='vertical-align:sub'>{$v['price']}</td>
+											<td style='vertical-align:sub;text-align:center'>									
+												admin				
+											</td>														
+										</tr>
+									</foreach>
+
+										
+									</tbody>
+
+								</table>
+{$page}
+							</div>
+
+						</div>
+
+						<!-- END EXAMPLE TABLE PORTLET-->
+
+					</div>
+
+				</div>
+
+				<!-- END PAGE CONTENT -->
+
+			</div>
+
+			<!-- END PAGE CONTAINER-->
+
+		</div>
+
+		<!-- END PAGE -->
+
+	</div>
+	<script>
+		$(".open").click(function(){
+			var _this = $(this);
+			layer.confirm('确定开票？', {
+			  btn: ['确定','取消'] //按钮
+			}, function(){
+				var url = "{:T('Order/Open')}";
+				var data = {id:_this.attr('id')};
+			  $.post(url,data,function(){
+				layer.closeAll();
+				layer.msg("充值成功");
+			  });
+			})
+		})
+	</script>
+	<!-- END CONTAINER -->
+	<include file="Public/foot" />

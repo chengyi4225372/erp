@@ -1,0 +1,192 @@
+<include file="Public/top" />
+<script src="{$_public}/js/echarts.min.js" type="text/javascript"></script> 
+<include file='Public/left' />
+	<!-- BEGIN PAGE -->
+<div class="page-content">
+
+	<!-- BEGIN PAGE CONTAINER-->        
+
+	<div class="container-fluid">
+
+		<!-- BEGIN PAGE HEADER-->
+
+		<div class="row-fluid">
+
+			<div class="span12">
+
+
+				<!-- BEGIN PAGE TITLE & BREADCRUMB-->
+
+				<h3 class="page-title">
+
+						{:F('title')}  <small>后台管理</small>
+
+				</h3>
+
+				<ul class="breadcrumb">
+
+					<li>
+
+						<i class="icon-home"></i>
+
+						<a href="{:T('Index/Index')}">首页</a> 
+
+						<i class="icon-angle-right"></i>
+
+					</li>
+
+
+					<li><a href="">报税管理</a></li>
+
+				</ul>
+
+				<!-- END PAGE TITLE & BREADCRUMB-->
+
+			</div>
+
+		</div>
+
+		<!-- END PAGE HEADER-->
+				
+				
+		<!-- BEGIN PAGE CONTENT-->
+		
+		<div class="row-fluid">
+
+			<div class="span12">
+
+				<!-- BEGIN EXAMPLE TABLE PORTLET-->
+
+				<div class="portlet box grey">
+
+					<div class="portlet-title">
+
+						<div class="caption"><i class="icon-edit"></i>报税风险数据概览</div>
+
+						<div class="tools">
+
+							<a href="javascript:;" class="collapse"></a>
+
+							<a href="javascript:;" class="reload"></a>
+
+							<a href="javascript:;" class="remove"></a>
+
+						</div>
+
+					</div>
+				
+							
+					<div class="portlet-body" style="overflow:hidden;">
+						<div class="span6 responsive">
+						<div class="dashboard-stat red">
+
+							<div class="visual">
+
+								<i class="icon-comments"></i>
+
+							</div>
+
+							<div class="details">
+
+								<div class="number">
+
+									0 个
+
+								</div>
+
+								<div class="desc">                           
+
+									历史报税风险订单
+
+								</div>
+
+							</div>              
+
+						</div>
+						</div>
+						<div class="span6 responsive">
+						<div class="dashboard-stat yellow">
+
+							<div class="visual">
+
+								<i class="icon-comments"></i>
+
+							</div>
+
+							<div class="details">
+
+								<div class="number">
+
+									0 个
+
+								</div>
+
+								<div class="desc">                           
+
+									当月报税风险订单
+
+								</div>
+
+							</div>              
+
+						</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<!-- END PAGE CONTENT -->
+
+		</div>
+
+		<div class="row-fluid">
+			<div class="portlet box grey">
+
+				<div class="portlet-title">
+
+					<div class="caption"><i class="icon-edit"></i>报税风险数据概览</div>
+
+					<div class="tools">
+
+						<a href="javascript:;" class="collapse"></a>
+
+						<a href="javascript:;" class="reload"></a>
+
+						<a href="javascript:;" class="remove"></a>
+
+					</div>
+
+				</div>
+				<div class="portlet-body" style="overflow:hidden;">
+					<div class="span4">
+						<div class="count alert alert-block alert-success fade in">
+							<p>当前打款人数: 3 人</p>
+							<p>当前打款金额: 90000.00 元</p>
+							<p>当前人均打款金额：30000.00 元</p>
+						</div>							
+					</div>
+					<div class="span4">
+						<div class="count alert alert-block alert-success fade in">
+							<p>打款金额超过30000元人数: 1 人</p>
+							<p>打款金额超过100000元人数: 0 人</p>
+							<p>打款金额超过15000元人数: 0 人</p>
+						</div>							
+					</div>
+					<div class="span4">
+						<div class="count alert alert-block alert-success fade in">
+							<p>当前单人累积最高打款额: 50000 元</p>
+						</div>							
+					</div>
+				</div>	
+			</div>
+		<!-- END PAGE CONTAINER-->
+		</div>
+	</div>
+
+	<!-- END PAGE -->
+
+</div>
+
+<!-- END CONTAINER -->
+<include file="Public/foot" />

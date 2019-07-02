@@ -1,0 +1,171 @@
+<include file="Public/top" />
+<include file='Public/left' />
+		<!-- BEGIN PAGE -->
+
+		<div class="page-content">
+
+			<!-- BEGIN PAGE CONTAINER-->        
+
+			<div class="container-fluid">
+
+				<!-- BEGIN PAGE HEADER-->
+
+				<div class="row-fluid">
+
+					<div class="span12">
+
+
+						<!-- BEGIN PAGE TITLE & BREADCRUMB-->
+
+						<h3 class="page-title">
+
+								{:F('title')}  <small>后台管理</small>
+
+						</h3>
+
+						<ul class="breadcrumb">
+
+							<li>
+
+								<i class="icon-home"></i>
+
+								<a href="{:T('Index/Index')}">首页</a> 
+
+								<i class="icon-angle-right"></i>
+
+							</li>
+
+							<li>
+
+								<a href="{:T('User/Caches')}">缓存管理</a>
+
+								<i class="icon-angle-right"></i>
+
+							</li>
+
+							<li><a href="">缓存列表</a></li>
+
+						</ul>
+
+						<!-- END PAGE TITLE & BREADCRUMB-->
+
+					</div>
+
+				</div>
+
+				<!-- END PAGE HEADER-->
+
+				<!-- BEGIN PAGE CONTENT-->
+
+				<div class="row-fluid">
+
+					<div class="span12">
+
+						<!-- BEGIN EXAMPLE TABLE PORTLET-->
+
+						<div class="portlet box blue">
+
+							<div class="portlet-title">
+
+								<div class="caption"><i class="icon-edit"></i>缓存列表</div>
+
+								<div class="tools">
+
+									<a href="javascript:;" class="collapse"></a>
+
+									<a href="javascript:;" class="reload"></a>
+
+									<a href="javascript:;" class="remove"></a>
+
+								</div>
+
+							</div>
+
+							<div class="portlet-body">
+
+								<div class="clearfix">
+
+									<div class="btn-group">
+
+										<a href="#form1" data-toggle="modal" class="btn green">
+
+										全部更新 <i class="icon-plus"></i>
+
+										</a>
+
+									</div>
+
+									<div class="btn-group pull-right">
+										<form id='form'>
+										<div class="input-append">
+										<input class="m-wrap" type="hidden" name='a' value="UserList">
+										<input class="m-wrap" type="hidden" name='m' value='User'>
+											<input class="m-wrap" type="text" name="keyword" value="{$_REQUEST['keyword']}">
+											<span class="add-on"> <a href="javascript:" onclick="document.getElementById('form').submit()"><i class="icon-search"></i> 搜索</a> </span>
+										</div>
+										</form>
+									</div>
+
+								</div>
+
+								<table class="table table-striped table-hover table-bordered" id="sample_editable_1">
+
+									<thead>
+
+										<tr>
+
+											<th>缓存名称</th>
+											<th>上次更新时间</th>
+											<th>下次更新计划</th>
+											<th>缓存名</th>
+											<th>更新方法</th>
+											<th>更新</th>
+										</tr>
+
+									</thead>
+									<tbody>	
+									<foreach $list as $v>
+									<tr class="">
+										<td>{$v[name]}</td>
+										<td>{$v[lasttime]}</td>
+										<td>{$v[nexttime]}</td>
+										<td>{$v[cachename]}</td>
+										<td>{$v[func]}</td>
+										<td><a href='javascript:updateCache({$v[id]})' class="btn green mini">手动更新</a></td>
+									</tr>
+									</foreach>
+									</tbody>
+
+								</table>
+{$page}
+							</div>
+
+						</div>
+
+						<!-- END EXAMPLE TABLE PORTLET-->
+
+					</div>
+
+				</div>
+
+				<!-- END PAGE CONTENT -->
+
+			</div>
+
+			<!-- END PAGE CONTAINER-->
+
+		</div>
+
+		<!-- END PAGE -->
+
+	</div>
+	<!-- END CONTAINER -->
+	<include file="Public/foot" />
+<script>
+function updateCache(id){
+	url = "{:T('Index/updateCache')}";
+	$.post(url,{id:id},function(e){
+		alert(e.msg);
+	},'json')
+}
+</script>

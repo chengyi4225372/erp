@@ -1,0 +1,151 @@
+<include file="Public/top" />
+<script src="{$_public}/js/city.js" type="text/javascript"></script>
+<include file='Public/left' />
+	<!-- BEGIN PAGE -->
+<div class="page-content">
+
+	<!-- BEGIN PAGE CONTAINER-->        
+
+	<div class="container-fluid">
+
+		<!-- BEGIN PAGE HEADER-->
+
+		<div class="row-fluid">
+
+			<div class="span12">
+
+
+				<!-- BEGIN PAGE TITLE & BREADCRUMB-->
+
+				<h3 class="page-title">
+
+						{:F('title')}  <small>后台管理</small>
+
+				</h3>
+
+				<ul class="breadcrumb">
+
+					<li>
+
+						<i class="icon-home"></i>
+
+						<a href="{:T('Index/Index')}">首页</a> 
+
+						<i class="icon-angle-right"></i>
+
+					</li>
+					<li>
+
+						<a href="{:T('User/Index')}">会员管理</a>
+
+						<i class="icon-angle-right"></i>
+
+					</li>
+
+					<li><a href="">认证</a></li>
+
+				</ul>
+
+				<!-- END PAGE TITLE & BREADCRUMB-->
+
+			</div>
+
+		</div>
+
+		<!-- END PAGE HEADER-->
+				
+				
+		<!-- BEGIN PAGE CONTENT-->
+
+		<div class="row-fluid">
+
+			<div class="span12">
+
+				<!-- BEGIN EXAMPLE TABLE PORTLET-->
+
+				<div class="portlet">
+
+					<div class="portlet-title">
+
+						<div class="caption"><i class="icon-edit"></i>审核资料</div>
+
+						
+
+					</div>
+					<div class="portlet-body">
+						<form id='basic_validate' class="row-fluid form-horizontal" action="{:T('User/EditDo1')}" method="post" enctype="multipart/form-data">
+						  <input name="id" type="hidden" value="{$info['id']}">
+						  <fieldset>
+							<table class="table sliders table-striped">
+
+									<tbody>
+
+										<tr>
+
+											<td style="width:15%">公司名称</td>
+
+											<td>
+
+												{$info[name]}
+											</td>
+
+										</tr>										
+
+										<tr>
+
+											<td>营业执照</td>
+
+											<td>
+
+												<div id="slider-range-min" class="slider bg-yellow ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" aria-disabled="false"><div class="ui-slider-range ui-widget-header ui-corner-all ui-slider-range-min" style="width: 5.15021%;"></div><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 5.15021%;"></a></div>
+
+												<div class="slider-value">
+
+													<img src="{$info[pic]}" style="height:260px;">
+
+												</div>
+
+											</td>
+
+										</tr>
+										
+
+									</tbody>
+
+								</table>
+						
+							<div class="form-actions">
+							  <if $info[status] == 2>
+							   <button class="btn btn-primary green" type="submit">修改资料</button>
+							   <else />
+							   <if $info[type] == 1>
+							  <button class="btn btn-primary green" type="submit">注册并通过认证</button>							 
+							  </if>
+							  <if $info[type] == 0>
+							   <button class="btn btn-primary green" type="submit">通过认证</button>
+							   <button class="btn red" type="reset">驳回</button>
+							  </if>
+							  </if>
+							</div>
+						  </fieldset>
+						</form>				
+					
+					</div>
+				</div>
+
+			</div>
+
+			<!-- END PAGE CONTENT -->
+
+		</div>
+
+		<!-- END PAGE CONTAINER-->
+
+	</div>
+
+	<!-- END PAGE -->
+
+</div>
+
+<!-- END CONTAINER -->
+<include file="Public/foot" />

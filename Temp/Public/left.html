@@ -1,0 +1,215 @@
+
+	<!-- BEGIN CONTAINER -->
+
+	<div class="page-container row-fluid">
+
+		<!-- BEGIN SIDEBAR -->
+
+		<div class="page-sidebar nav-collapse collapse">
+
+			<!-- BEGIN SIDEBAR MENU -->        
+
+			<ul class="page-sidebar-menu">
+
+				<li class="start ">
+
+					<a href="{:T('Index/Index')}">
+
+					<i class="icon-home"></i> 
+
+					<span class="title">个人面板</span>
+
+					</a>
+
+				</li>
+				
+				<li  >
+
+					<a href="javascript:;">
+
+					<i class="icon-user"></i> 
+
+					<span class="title">客户管理</span>
+
+					
+					</a>
+
+					<ul class="sub-menu" <if $_GET[m] == 'User'>style="display: block;"</if>> 
+
+						<li <if $_GET[a] == 'Index' && $_GET[m] == "User">class='active'</if>>
+
+							<a href="{:T('User/Index')}">
+
+							意向客户</a>
+
+						</li>
+						<li <if $_GET[a] == 'Cert'>class='active'</if>>
+
+							<a href="{:T('User/Cert')}">
+
+							签约客户</a>
+						</li>
+						<li <if $_GET[a] == 'Vip'>class='active'</if>>
+
+							<a href="{:T('User/Vip')}">
+
+							无效客户</a>
+						</li>					
+					</ul>
+
+				</li>
+				<li>
+
+					<a href="javascript:;">
+
+					<i class="icon-book"></i> 
+						<span class="title">订单管理</span>
+					</a>
+
+					<ul class="sub-menu" <if $_GET[m] == 'Order'>style="display: block;"</if> > 
+
+						<li <if $_GET[a] == 'Index'>class='active'</if>>
+							<a href="{:T('Order/Index')}">
+							订单列表</a>
+						</li>
+						<li <if $_GET[a] == 'BillLog'>class='active'</if>>
+							<a href="{:T('Order/BillLog')}">
+							收款记录</a>
+						</li>
+						<li <if $_GET[a] == 'InvestLog'>class='active'</if>>
+							<a href="{:T('Order/InvestLog')}">
+							合同管理</a>
+						</li>
+					</ul>
+
+				</li>
+				<li>
+
+					<a href="javascript:;">
+
+					<i class="icon-list-alt"></i> 
+						<span class="title">公司管理</span>
+					</a>
+
+					<ul class="sub-menu" <if $_GET[m] == 'Goods'>style="display: block;"</if> > 
+
+						<li <if $_GET[a] == 'Index'>class='active'</if>>
+							<a href="{:T('Goods/Index')}">
+							在营公司
+							</a>
+						</li>
+						<li <if $_GET[a] == 'Ongoing'>class='active'</if>>
+							<a href="{:T('Goods/Ongoing')}">
+							僵尸公司
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+
+					<a href="javascript:;">
+
+					<i class="icon-list-alt"></i> 
+						<span class="title">发票管理</span>
+					</a>
+
+					<ul class="sub-menu" <if $_GET[m] == 'Goods'>style="display: block;"</if> > 
+
+						<li <if $_GET[a] == 'Index'>class='active'</if>>
+							<a href="{:T('Goods/Index')}">
+							开票记录
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+
+					<a href="javascript:;">
+
+					<i class="icon-list-alt"></i> 
+						<span class="title">工单管理</span>
+					</a>
+
+					<ul class="sub-menu" <if $_GET[m] == 'Goods'>style="display: block;"</if> > 
+
+						<li <if $_GET[a] == 'Index'>class='active'</if>>
+							<a href="{:T('Goods/Index')}">
+							入驻工单
+							</a>
+						</li>
+						<li <if $_GET[a] == 'Ongoing'>class='active'</if>>
+							<a href="{:T('Goods/Ongoing')}">
+							开票工单
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+
+					<a href="javascript:;">
+
+					<i class="icon-list-alt"></i> 
+						<span class="title">员工权限</span>
+					</a>
+
+					<ul class="sub-menu" <if $_GET[m] == 'Tax'>style="display: block;"</if> > 
+
+						<li <if $_GET[a] == 'Risk'>class='active'</if>>
+							<a href="{:T('Tax/Risk')}">
+							部门</a>
+						</li>
+						<li <if $_GET[a] == 'Appraise'>class='active'</if>>
+							<a href="{:T('Tax/Appraise')}">
+							角色</a>
+						</li>
+						<li <if $_GET[a] == 'Appraise'>class='active'</if>>
+							<a href="{:T('Tax/Appraise')}">
+							员工</a>
+						</li>
+					</ul>
+
+				</li>
+				<li>
+
+					<a href="javascript:;">
+
+					<i class="icon-cog"></i> 
+
+					<span class="title">网站设置</span>
+
+					</a>
+
+					<ul class="sub-menu" <if $_GET[a] == 'Webset'>style="display: block;"</if>> 
+						<li <if  $_GET[a] == 'Webset'>class='active'</if>>
+
+							<a href="{:T('Index/Webset')}">
+
+							基本设置</a>
+
+						</li>
+
+					</ul>
+
+				</li>
+				
+	
+				
+				<li class="last ">
+
+					<a href="http://www.qingbug.com">
+
+					<i class="icon-bar-chart"></i> 
+
+					<span class="title">Chinax3 framework</span>
+
+					</a>
+
+				</li>
+
+			</ul>
+
+			<!-- END SIDEBAR MENU -->
+
+		</div>
+
+		<!-- END SIDEBAR -->

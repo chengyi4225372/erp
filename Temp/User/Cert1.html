@@ -1,0 +1,182 @@
+<include file="Public/top" />
+<include file='Public/left' />
+		<!-- BEGIN PAGE -->
+
+		<div class="page-content">
+
+			<!-- BEGIN PAGE CONTAINER-->        
+
+			<div class="container-fluid">
+
+				<!-- BEGIN PAGE HEADER-->
+
+				<div class="row-fluid">
+
+					<div class="span12">
+
+
+						<!-- BEGIN PAGE TITLE & BREADCRUMB-->
+
+						<h3 class="page-title">
+
+								{:F('title')}  <small>后台管理</small>
+
+						</h3>
+
+						<ul class="breadcrumb">
+
+							<li>
+
+								<i class="icon-home"></i>
+
+								<a href="{:T('Index/Index')}">首页</a> 
+
+								<i class="icon-angle-right"></i>
+
+							</li>
+
+							<li>
+
+								<a href="{:T('User/UserList')}"></a>
+
+								<i class="icon-angle-right"></i>
+
+							</li>
+
+							<li><a href="">会员列表</a></li>
+
+						</ul>
+
+						<!-- END PAGE TITLE & BREADCRUMB-->
+
+					</div>
+
+				</div>
+
+				<!-- END PAGE HEADER-->
+
+				<!-- BEGIN PAGE CONTENT-->
+
+				<div class="row-fluid">
+
+					<div class="span12">
+
+						<!-- BEGIN EXAMPLE TABLE PORTLET-->
+
+						<div class="portlet box grey">
+
+							<div class="portlet-title">
+
+								<div class="caption"><i class="icon-edit"></i></div>
+
+								<div class="tools">
+
+									<a href="javascript:;" class="collapse"></a>
+
+									<a href="javascript:;" class="reload"></a>
+
+									<a href="javascript:;" class="remove"></a>
+
+								</div>
+
+							</div>
+
+							<div class="portlet-body">
+
+								<div class="clearfix">
+
+
+								</div>
+
+								<table class="table table-striped table-hover table-bordered" id="sample_editable_1">
+
+									<thead>
+
+										<tr>
+
+											<th class="span1">ID</th>
+											<th class="span3">公司名称</th>
+											<th class="span2">发人身份证</th>
+											<th class="span3">帐户</th>
+											<th class="span2">操作</th>
+										</tr>
+
+									</thead>
+									<tbody>
+									<foreach $list as $v>
+									<tr class="">
+											<td style='vertical-align:sub'>{$v['user_id']}</td>
+											<td style='vertical-align:sub'>{$v['name']}</td>
+											<td style='vertical-align:sub'>{$v['faren_z']}</td>
+											<td style='vertical-align:sub'>{$v['amount']}</td>
+											<td style='vertical-align:sub;text-align:center'>
+												<a href="javascript::" class="btn mini yellow topay" uid="{$v[user_id]}">充值</a>											
+												<a class="btn mini green" href="{:T('User/Edit?id='.$v['id'])}"><i class="icon-ok-sign"></i> 查看</a>					
+											</td>														
+										</tr>
+									</foreach>
+
+										
+									</tbody>
+
+								</table>
+{$page}
+							</div>
+
+						</div>
+
+						<!-- END EXAMPLE TABLE PORTLET-->
+
+					</div>
+
+				</div>
+
+				<!-- END PAGE CONTENT -->
+
+			</div>
+
+			<!-- END PAGE CONTAINER-->
+
+		</div>
+
+		<!-- END PAGE -->
+
+	</div>
+<div class="bill hide" >
+		<div class='pointer box' style="padding:20px;line-height:30px;">
+			<p style="margin-left:5px;">您正在为ID为<b id="usid"></b>用户进行充值</p>		
+			<p><span  style="padding:5px;width:100px;">充值金额：</span><span><input id="amount" class="m-wrap amount" style="padding:5px;width:100px;"></span><span style="padding:5px;width:100px;"> 元</span></p>
+			<p style="margin-left:80px;margin-top:15px;"><a class="btn yellow small pay">充值</a></p>
+		</div>
+	</div>
+	<script>
+		$(".topay").click(function(){
+			var id = $(this).attr("uid");
+			$("#usid").html(id);
+			layer.open({
+				title:"充值",
+				type:1,
+				area:['300px','230px'],
+				content:$('.bill').html()
+			})
+		});
+		$("html").on('keyup','.amount',function(){			
+			var val = $(this).val();
+			$(this).val(parseInt(val));
+		});
+		$("html").on('click','.pay',function(){
+			layer.confirm('确定充值？', {
+			  btn: ['确定','取消'] //按钮
+			}, function(){
+				var url = "{:T('User/Pay')}";
+				var data = {uid:$("#usid").text(),amount:$(".amount").eq(1).val()};
+			  $.post(url,data,function(){
+				layer.closeAll();
+				layer.msg("充值成功");
+			  });
+			})
+		});
+	</script>
+
+	<!-- END CONTAINER -->
+	<include file="Public/foot" />
