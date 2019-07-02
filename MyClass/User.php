@@ -1,11 +1,25 @@
 <?php
 namespace MyClass;
 class User extends \MyClass\Common{
+    //意向客户
 	public function Index(){
-		$p = e('Page',$this->m('h_user_person')->where('state = 0')->count(),50);
-		$list = $this->m('h_user_person')->where('state = 0')->limit($p->firstRow.','.$p->listRows)->select();
+		$p = e('Page',$this->m('e_user')->where('cates_id = 1')->count(),50);
+		$list = $this->m('e_user')->where('cates_id = 1')->limit($p->firstRow.','.$p->listRows)->select();
 		$this->s('list',$list)->s('page',$p->show())->v();
 	}
+
+    public function Edit(){
+        $info = $this->m('e_user')->find($_GET['id']);
+        $this->s('info',$info)->v();
+    }
+
+    public function  add(){
+	    $this->v();
+    }
+
+
+
+    //todo 没有使用
 	public function Login(){
 		$p = e('Page',$this->m('user_login')->count());
 		$list = $this->m('user_login l')->join('user u on u.id = l.uid')->group('l.id')->order('time DESC')->limit($p->firstRow.','.$p->listRows)->select();
@@ -16,10 +30,7 @@ class User extends \MyClass\Common{
 		$list = $this->m('h_user_person u')->field("u.*,a.amount")->join('h_account a on a.uid = u.user_id')->where('state = 1')->limit($p->firstRow.','.$p->listRows)->select();
 		$this->s('list',$list)->s('page',$p->show())->v();
 	}
-	public function Edit(){
-		$info = $this->m('h_user_company')->find($_GET['id']);
-		$this->s('info',$info)->v();
-	}
+
 	public function EditReg(){
 		$info = $this->m('h_user_person')->find($_GET['id']);
 		$this->s('info',$info)->v();
