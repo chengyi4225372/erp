@@ -37,18 +37,14 @@
 
 							<li>
 
-								<a href="{:T('User/Index')}">会员管理</a>
-
+								<a href="{:T('User/Index')}">意向客户</a>
 								<i class="icon-angle-right"></i>
-
 							</li>
-
-							<li><a href="">会员列表</a></li>
-
+							<li><a href="">意向客户列表</a></li>
 						</ul>
 
 						<!-- END PAGE TITLE & BREADCRUMB-->
-
+						<button type="button" class="layui-btn layui-btn-normal" onclick="show_url()">添加</button>
 					</div>
 
 				</div>
@@ -98,6 +94,7 @@
 											<th class="span3">用户名</th>
 											<th class="span2">创建时间</th>
 											<th class="span2">创建人ID</th>
+											<th class="span2">类型</th>
 											<th class="span2">操作</th>
 										</tr>
 
@@ -146,3 +143,8 @@
 
 	<!-- END CONTAINER -->
 	<include file="Public/foot" />
+<script>
+	function show_url(){
+     window.location.href="{:T('User/add')}";
+	}
+</script>
